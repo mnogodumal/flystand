@@ -1,0 +1,44 @@
+.select-anchor {
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    &:hover {
+        .select-anchor {
+
+            &__img {
+                fill: var(--c-1);
+                transition: cubic-bezier(0.165, 0.84, 0.44, 1) .3s all;
+            }
+
+            &__text {
+                color: var(--c-1);
+                transition: cubic-bezier(0.165, 0.84, 0.44, 1) .3s all;
+            }
+        }
+    }
+
+    &__img {
+        display: block;
+
+        margin-right: 10px;
+        fill: #aaa;
+        transition: cubic-bezier(0.165, 0.84, 0.44, 1) .15s all;
+    }
+
+    &__text {
+        position: relative;
+        transition: cubic-bezier(0.165, 0.84, 0.44, 1) .15s all;
+
+        &:after {
+            content: '▼';
+
+            padding-left: 6px;
+            font-size: 10px;
+            color: inherit;
+            transition: cubic-bezier(0.165, 0.84, 0.44, 1) .15s all;
+        }
+    }
+}

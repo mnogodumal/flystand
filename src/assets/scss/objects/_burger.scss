@@ -1,0 +1,157 @@
+.burger-anchor {
+
+    @include phone-big {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+
+        display: block;
+
+        width: 40px;
+        height: 40px;
+        padding: 0 5px;
+        border: none;
+
+        background: transparent;
+
+        transform: translateY(-50%);
+    }
+
+    &-active {
+
+        @include phone-big {
+
+            position: fixed;
+            z-index: 1030;
+
+            transform: none;
+        }
+
+        .burger-anchor {
+
+            &__span:nth-child(1) {
+                @include phone-big {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+            }
+            &__span:nth-child(2) {
+                @include phone-big {
+                    display: none;
+                }
+            }
+            &__span:nth-child(3) {
+                @include phone-big {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    &__span {
+        @include phone-big {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+
+            display: block;
+            width: 30px;
+            height: 2px;
+
+            background: #000;
+
+            transform: translate(-50%, -50%);
+
+            transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) .15s all;
+        }
+    }
+
+    &__span:nth-child(1) {
+        @include phone-big {
+            transform: translate(-50%, calc(-50% - 8px));
+        }
+    }
+
+    &__span:nth-child(2) {
+        @include phone-big {
+            transform: translate(-50%, calc(-50%));
+        }
+    }
+
+    &__span:nth-child(3) {
+        @include phone-big {
+            transform: translate(-50%, calc(-50% + 8px));
+        }
+    }
+}
+
+
+.navbar {
+    @include phone-big {
+        position: fixed;
+        left: calc(100vw + 50px);
+        top: 0;
+        bottom: 0;
+        z-index: 1010;
+
+        height: 100vh;
+        width: 100vw;
+
+        padding: 0 12px;
+        padding-top: 105px;
+
+        margin: 0;
+
+        overflow-y: scroll;
+
+        background: #fff;
+
+        transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) .15s all;
+
+        @include phone {
+            padding-top: 80px;
+        }
+    }
+
+    &__content {
+        @include phone-big {
+            max-width: #{$sm-container};
+            width: 100%;
+            margin: 0 auto;
+        }
+        @include phone {
+            max-width: #{$xs-container}
+        }
+    }
+
+    &__list {
+        @include phone-big {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    &__list-link {
+        @include phone-big {
+            font-size: 16px;
+        }
+    }
+
+    &__list-item {
+        @include phone-big {
+            margin-bottom: 25px;
+        }
+
+        @include phone {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+.burger-active {
+    &.navbar {
+        @include phone-big {
+            left: 0;
+            transition: cubic-bezier(0.6, -0.28, 0.735, 0.045) .3s all;
+        }
+    }
+}

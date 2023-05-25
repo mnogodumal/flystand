@@ -1,0 +1,32 @@
+.logo {
+
+    max-width: 406px;
+    width: max-content;
+
+    @include laptop {
+        max-width: 300px;
+    }
+
+    @include tablet {
+        max-width: 200px;
+    }
+
+    &__link {
+        display: block;
+
+        width: 100%;
+
+        font-size: 1rem;
+        line-height: 1;
+    }
+
+    &__picture {
+        display: block;
+
+        width: 100%;
+    }
+
+    svg.logo__img {
+        fill: currentColor;
+    }
+}

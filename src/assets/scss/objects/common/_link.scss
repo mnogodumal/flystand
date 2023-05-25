@@ -1,0 +1,126 @@
+.link {
+
+    position: relative;
+
+    padding: 5px 0;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: calc(24/16);
+    color: var(--c-1);
+    text-decoration: none;
+
+    @include laptop-big {
+        font-size: 14px;
+    }
+
+
+    &:hover,
+    &:focus {
+        color: var(--c-1-d);
+
+        transition: all .3s ease;
+    }
+
+    &:active {
+        color: var(--c-1-dd);
+    }
+
+    &:after {
+        content: '';
+
+        position: absolute;
+        left: 0;
+        bottom: 3px;
+
+        margin-top: 2px;
+        width: 100%;
+        height: 1px;
+
+        background: var(--c-1)
+    }
+
+    &.link-icon-arrow {
+
+        &__text {
+            font-style: inherit;
+            font-weight: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            color: inherit;
+        }
+
+        &__arrow {
+            margin-left: 7px;
+            fill: inherit
+        }
+    }
+}
+
+.link-icon {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: -5px;
+    padding: 5px;
+
+    &:not(:last-of-type) {
+        margin-right: calc(28px - 10px);
+
+        @include laptop {
+            margin-right: calc(20px - 10px);
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    &__img {}
+}
+
+.link-full-dress {
+    display: flex;
+    align-items: center;
+
+    color: #000;
+
+    &:hover,
+    &:active {
+        color: var(--c-1-d);
+
+        .link-full-dress__img {
+            // filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, .15));
+            // transition: cubic-bezier(0.6, 0.04, 0.98, 0.335) .3s all;
+        }
+    }
+    &:active {
+        color: var(--c-1-dd);
+
+        .link-full-dress__img {
+            // filter: drop-shadow(-1px -1px 5px rgba(0, 0, 0, .15));
+            // transition: cubic-bezier(0.6, 0.04, 0.98, 0.335) .3s all;
+        }
+    }
+
+    &__img {
+        display: block;
+
+        margin-right: 15px;
+
+        @include laptop {
+            margin-right: 10px;
+            width: 24px;
+        }
+    }
+
+    &__text {
+        color: inherit;
+
+        transition: cubic-bezier(0.6, 0.04, 0.98, 0.335) .3s all;
+    }
+}

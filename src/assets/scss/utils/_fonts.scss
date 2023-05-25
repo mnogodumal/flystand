@@ -1,0 +1,23 @@
+// Modern format (woff + ttf)
+@mixin font($family, $filePath, $weight: normal, $style: normal) {
+
+    @font-face {
+
+        font-family: $family;
+        src: 
+            url("#{$filePath}.woff") format("woff"), // Prety modern browsers
+            url("#{$filePath}.ttf") format("truetype"); // Safari, Android, iOS
+
+        font-weight: $weight;
+        font-style: $style;
+        font-display: swap;
+
+    }
+
+}
+
+
+
+@include font('FuturaPT', '/fonts/FuturaPT/FuturaPT-Book', normal);
+@include font('FuturaPT', '/fonts/FuturaPT/FuturaPT-Medium', 500);
+@include font('FuturaPT', '/fonts/FuturaPT/FuturaPT-Bold', bold);
